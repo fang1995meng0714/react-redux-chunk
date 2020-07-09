@@ -27,6 +27,9 @@ function Demo2() {
             <Button onClick={() => {
                 clearInterval(timer); 
             }} style={{marginLeft: "20px"}}> 清除 </Button>
+            <div style={{margin:"5px 14px"}}>
+                hooks: useEffect
+            </div>
         </div>
     )
 }

@@ -1,26 +1,34 @@
-import React, {useState, useEffect, useRef } from 'react';
+import React, { useReducer } from 'react';
 import { Button } from 'antd';
+const initialState = {
+    count:1
+}
+
+function reducer(state, action) {
+    switch(action.type) {
+        case "increment" :
+            return { count: state.count + action.payload };
+        case "decrement": 
+            return { count: state.count - action.payload };
+        default:
+            return state;
+    }
+}
 
 function Demo3() {
-    const [value, setValue] = useState(0);
-    const timer = useRef(0);
-
-    useEffect(() => {
-        return () => {
-            window.clearTimeout(timer);
-        }
-    });
-
-    function dealClick() {
-        timer.current = window.setTimeout(() => {
-            setValue(100);
-        }, 5000);
-    }
-
+    const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <div>
-            <span>Value is {value}</span>
-            <Button onClick={dealClick}>Click Me!</Button>
+            <Button type="primary" onClick={() => {
+                dispatch({type: "increment", payload: 5})
+            }}> + </Button>
+            <span style={{margin: "10px"}}>{state.count}</span>
+            <Button onClick={() => {
+                dispatch({type: "decrement", payload: 3})
+            }}> - </Button>
+             <div style={{margin:"5px 14px"}}>
+                hooks: useReducer
+            </div>
         </div>
     )
 }

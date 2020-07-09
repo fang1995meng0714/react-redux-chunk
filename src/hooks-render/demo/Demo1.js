@@ -5,6 +5,13 @@ const Context = createContext();
 function Item1() {
     const count = useContext(Context);
     return(
+        <span style={{margin: "10px"}}>{count}<Item2></Item2></span>
+    )
+}
+
+function Item2() {
+    const count = useContext(Context);
+    return(
         <span style={{margin: "10px"}}>{count}</span>
     )
 }
@@ -20,6 +27,9 @@ function Demo1() {
             <Context.Provider value={count}>
                 <Item1></Item1>
             </Context.Provider>
+            <div style={{margin:"5px 14px"}}>
+                hooks: useState/ createContext/ useContext
+            </div>
         </div>
     )
 }
