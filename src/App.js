@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu } from 'antd';
+import { Menu, message } from 'antd';
 import { Route, Link, Redirect, withRouter } from 'react-router-dom';
 import Todolist from './tradition/Todolist';
 import {  PieChartOutlined, DesktopOutlined, ContainerOutlined } from '@ant-design/icons';
@@ -14,13 +14,18 @@ class App extends Component {
             collapsed: false,
         };
     }
+
+    info = () => {
+        message.info('暂未开放');
+    };
     
     render() {
         let pathname = this.props.location.pathname || "";
         let selectedKeys = pathname === "/tradition" 
             ? "1" : pathname === "/hooks" ?
             "2" : "1";
-      return ( 
+        
+        return ( 
         <div id="app-container">
             <div className="content-left">
                 <Menu
@@ -36,7 +41,7 @@ class App extends Component {
                     <Menu.Item key="2" icon={<DesktopOutlined />}>
                         <Link  to='/hooks'>react hooks </Link>
                     </Menu.Item>
-                    <Menu.Item key="3" icon={<ContainerOutlined />}>
+                    <Menu.Item key="3" icon={<ContainerOutlined/>}  onClick={this.info}>
                         Tyepscript + hooks
                     </Menu.Item>
                 </Menu>
@@ -50,6 +55,8 @@ class App extends Component {
         </div>
        );
     }
+
+    
 }
 
 export default withRouter(App)
