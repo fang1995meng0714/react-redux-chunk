@@ -14,7 +14,6 @@ export default class App extends Component {
             <div className="content-left">
                 <Menu
                 defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
                 mode="inline"
                 theme="light"
                 inlineCollapsed={this.state.collapsed}
