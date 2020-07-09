@@ -18,7 +18,6 @@ export const delItemAction = (index) => ({
 export const getListAction = () => {
     return (dispatch)=>{
         axios.get('http://localhost:3000/data.json').then((res)=>{
-            console.log(res);
             let {todoList} = res.data.todoList;
             const action = {
                 type: GET_LIST,
