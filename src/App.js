@@ -48,7 +48,7 @@ class App extends Component {
             </div> 
             
             <div className="content-right">
-                <Redirect path="/" exact={true} to="/hooks" />
+                <Redirect path="/" exact={true} to="/tradition" />
                 <Route exact path="/tradition" component={Todolist}/>
                 <Route exact path="/hooks" component={Demo}/>
             </div> 
