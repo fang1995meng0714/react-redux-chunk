@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import TodolistUi from './TodolistUi';
 import { connect } from "react-redux";
-import {store} from "./store";
-import { changeInputAction, addItemAction, delItemAction, getListAction } from "./store/actionCreator";
+import {store} from "../store";
+import { changeInputAction, addItemAction, delItemAction, getListAction } from "../store/actionCreator";
 
 class Todolist extends Component {
   render() {
