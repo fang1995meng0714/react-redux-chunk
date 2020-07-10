@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, message } from 'antd';
 import { Route, Link, Redirect, withRouter } from 'react-router-dom';
-import Todolist from './tradition/Todolist';
+import Todolist from './todolist/Todolist';
 import {  PieChartOutlined, DesktopOutlined, ContainerOutlined } from '@ant-design/icons';
 import Demo from './hooks-render/Demo';
 
@@ -21,7 +21,7 @@ class App extends Component {
     
     render() {
         let pathname = this.props.location.pathname || "";
-        let selectedKeys = pathname === "/tradition" 
+        let selectedKeys = pathname === "/todolist" 
             ? "1" : pathname === "/hooks" ?
             "2" : "1";
         
@@ -36,7 +36,7 @@ class App extends Component {
                 style={{height: "100%"}}
                 >
                     <Menu.Item key="1" icon={<PieChartOutlined />}>
-                        <Link  to='/tradition'>class + redux </Link>
+                        <Link  to='/todolist'>class + redux </Link>
                     </Menu.Item>
                     <Menu.Item key="2" icon={<DesktopOutlined />}>
                         <Link  to='/hooks'>react hooks </Link>
@@ -48,8 +48,8 @@ class App extends Component {
             </div> 
             
             <div className="content-right">
-                <Redirect path="/" exact={true} to="/tradition" />
-                <Route exact path="/tradition" component={Todolist}/>
+                <Redirect path="/" exact={true} to="/todolist" />
+                <Route exact path="/todolist" component={Todolist}/>
                 <Route exact path="/hooks" component={Demo}/>
             </div> 
         </div>
