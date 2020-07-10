@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, message } from 'antd';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter,Redirect } from 'react-router-dom';
 import Todolist from './todolist/Todolist';
 import {  PieChartOutlined, DesktopOutlined, ContainerOutlined } from '@ant-design/icons';
 import Demo from './hooks-render/Demo';
@@ -47,6 +47,7 @@ class App extends Component {
                 </Menu>
             </div> 
             <div className="content-right">
+                <Redirect path="/" exact={true} to="/todolist" />
                 <Route exact path="/todolist" component={Todolist}/>
                 <Route exact path="/hooks" component={Demo}/>
             </div> 

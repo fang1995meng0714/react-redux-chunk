@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { Form, Input, Button, Checkbox } from "antd";
-import { withRouter } from 'react-router-dom';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { login} from "../store/actionCreator";
 
@@ -58,21 +57,19 @@ const Login = (props) => {
                 </Form>
             </div>
         </div>
-       );
+        );
 }
 
 const mapStateToProps = (state) => {
-    return{
-        loginSuccess: state.usernameInfo.loginSuccess
-    }
+    return{}
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         onFinish(value) {
             const action = login(value);
-            dispatch(action)
+            dispatch(action);
         }
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

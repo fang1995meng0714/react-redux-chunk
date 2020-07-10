@@ -5,7 +5,7 @@ const defaultState = {
     inputValue: "Write Some",
     todoList: [],
     usernameInfo: {
-        loginSuccess: false,
+        loginSuccess: window.sessionStorage.getItem("loginSuccess") || false,
         username: "",
         password: ""
     }
@@ -18,7 +18,7 @@ export default (state = defaultState, action) => {
             username: action.value.username,
             password: action.value.password
         }
-        
+        window.sessionStorage.setItem("loginSuccess", true);
         return {...state, usernameInfo};
     }
 
