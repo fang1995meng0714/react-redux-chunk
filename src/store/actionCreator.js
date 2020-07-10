@@ -1,5 +1,10 @@
-import { CHANGE_INPUT, ADD_ITEM, DEL_ITEM, GET_LIST } from "./actionTypes";
-import axios from 'axios'
+import { CHANGE_INPUT, ADD_ITEM, DEL_ITEM, GET_LIST, LOGIN } from "./actionTypes";
+import axios from 'axios';
+
+export const login = (value) => ({
+    type: LOGIN,
+    value
+});
 
 export const changeInputAction = (value) => ({
     type: CHANGE_INPUT,

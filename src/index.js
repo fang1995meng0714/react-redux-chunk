@@ -4,13 +4,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from "react-redux";
 import './index.css';
 import { store } from './store';
-import App from "./App";
+import DefaultLogin from "./DefaultLogin";
+
+
 import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App/>
+      <DefaultLogin />
     </Router>
   </Provider>
   ,document.getElementById('root'));

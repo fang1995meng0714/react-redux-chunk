@@ -1,12 +1,28 @@
 import moment from "moment";
-import { CHANGE_INPUT, ADD_ITEM, DEL_ITEM } from "./actionTypes";
+import { CHANGE_INPUT, ADD_ITEM, DEL_ITEM, LOGIN } from "./actionTypes";
 
 const defaultState = {
     inputValue: "Write Some",
-    todoList: []
+    todoList: [],
+    usernameInfo: {
+        isLogin: false,
+        username: "",
+        password: ""
+    }
 };
 
-export default (state = defaultState, action) => {
+const Reducer = (state = defaultState, action) => {
+    if(action.type === LOGIN) {
+        console.log(action)
+        let usernameInfo = {
+            isLogin: true,
+            username: action.value.username,
+            password: action.value.password
+        }
+        
+        return {...state, usernameInfo};
+    }
+
     if(action.type === CHANGE_INPUT) {
         return {...state, inputValue: action.value}
     }
@@ -34,3 +50,5 @@ export default (state = defaultState, action) => {
 
     return state;
 }
+
+export default Reducer;

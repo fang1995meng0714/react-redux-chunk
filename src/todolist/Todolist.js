@@ -36,18 +36,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     changInputValue(e) {
       const action = changeInputAction(e.target.value);
-
-      dispatch(action)
+      dispatch(action);
     },
     addItem() {
       const action = addItemAction();
-
       dispatch(action);
     },
 
     delItem(index) {
       const action = delItemAction(index);
-
       dispatch(action);
     }
   }

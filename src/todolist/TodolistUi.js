@@ -1,6 +1,5 @@
 import React from 'react';
 import { Input, Button, List, Divider  } from "antd";
-
 import PropTypes from 'prop-types';
 
 const TodolistUi = (props) => {
