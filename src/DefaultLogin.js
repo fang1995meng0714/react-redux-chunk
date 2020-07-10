@@ -5,14 +5,12 @@ import App from "./App";
 
 
 const TodolistUi = (props) => {
-    let loggedIn = true;
+    let loggedIn = false;
     return (
         <>
             {
                 loggedIn ? <App /> : <Login />
             }
-            
-            
         </>
        );
 }

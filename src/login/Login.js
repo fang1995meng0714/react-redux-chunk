@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { login } from "../store/actionCreator";
+import { login} from "../store/actionCreator";
 
 const Login = (props) => {
     return (
@@ -67,9 +67,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onFinish(value) {
             const action = login(value);
-            // const actions = routePush(value);
             dispatch(action)
-            // .then(dispatch(actions))
         }
     }
 }
