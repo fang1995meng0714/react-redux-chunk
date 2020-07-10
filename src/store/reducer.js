@@ -5,17 +5,16 @@ const defaultState = {
     inputValue: "Write Some",
     todoList: [],
     usernameInfo: {
-        isLogin: false,
+        loginSuccess: false,
         username: "",
         password: ""
     }
 };
 
-const Reducer = (state = defaultState, action) => {
+export default (state = defaultState, action) => {
     if(action.type === LOGIN) {
-        console.log(action)
         let usernameInfo = {
-            isLogin: true,
+            loginSuccess: true,
             username: action.value.username,
             password: action.value.password
         }
@@ -50,5 +49,3 @@ const Reducer = (state = defaultState, action) => {
 
     return state;
 }
-
-export default Reducer;
