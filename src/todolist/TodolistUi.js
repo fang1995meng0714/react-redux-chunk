@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Button, List, Divider  } from "antd";
-import 'antd/dist/antd.css';
+
 import PropTypes from 'prop-types';
 
 const TodolistUi = (props) => {
